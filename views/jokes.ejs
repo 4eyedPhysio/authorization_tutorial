@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jokes store</title>
+</head>
+<body>
+    <% if (user){%>
+    <p>welcome <%=user.username%> to our jokes list</p>
+    <p>below are the lists of our viral jokes</p>
+
+    <ul>
+        <% books.forEach(function(book){%>
+            <li><%=book.title%></li>
+
+       <% })%>
+    </ul>
+    <br />
+    <form action="/logout" method="post">
+        <button type="submit">logout</button>
+    </form>
+    <% } else {%>
+      <p>please <a href="/login">login</a> to view the jokes list</p>
+        <% } %>
+
+    
+</body>
+</html>
